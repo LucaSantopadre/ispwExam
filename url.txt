@@ -1,2 +1,0 @@
-codice: https://github.com/LucaSantopadre/ispwExam
-sonarcloud: https://sonarcloud.io/dashboard?id=LucaSantopadre_ispwExam
