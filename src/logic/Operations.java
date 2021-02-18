@@ -1,8 +1,9 @@
 package logic;
 
-
+/*
+ * Author: Luca Santopadre
+ */
 public class Operations {
-	
 	// sum
 	public double sum(double a, double b) {
 		return a + b;

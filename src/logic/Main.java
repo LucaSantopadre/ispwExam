@@ -1,16 +1,23 @@
 package logic;
 
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+/*
+ * Author: Luca Santopadre
+ */
 public class Main {
-	
 
-	public static void main(String[] args) {		
-		Scanner in = new Scanner(System.in);
+	private static Scanner in;
+
+	public static void main(String[] args) {	
+		in = new Scanner(System.in);
 		Operations ops = new Operations();
 		int retry;
+		
+		double a;
+		double b;
+		Double result;
+		result = null;
 		
 		System.out.println("Operations menu: ");
 		System.out.println("1) sum two numbers");
@@ -21,8 +28,6 @@ public class Main {
 		System.out.println("6) Make square of a number");
 		
 		int choiche = in.nextInt();
-		double a,b;
-
 		
 		switch (choiche) {
 			case 1: // sum
@@ -30,25 +35,25 @@ public class Main {
 				a = in.nextDouble();
 				System.out.println("Insert second number");
 				b = in.nextDouble();
-				
-				System.out.println(ops.sum(a, b));
+				result = ops.sum(a, b);
 				break;
+				
 			case 2: // sub
 				System.out.println("Insert first number");
 				a = in.nextDouble();
 				System.out.println("Insert second number");
 				b = in.nextDouble();
-				
-				System.out.println(ops.sub(a, b));
+				result = ops.sub(a, b);
 				break;
+				
 			case 3: //multiplicate
 				System.out.println("Insert first number");
 				a = in.nextDouble();
 				System.out.println("Insert second number");
 				b = in.nextDouble();
-				
-				System.out.println(ops.multiplicate(a, b));
+				result = ops.multiplicate(a, b);
 				break;
+				
 			case 4: //division
 				System.out.println("Insert first number");
 				a = in.nextDouble();
@@ -61,9 +66,9 @@ public class Main {
 				if(retry == 3) {
 					break;
 				}
-				System.out.println(ops.divide(a, b));
-				
+				result = ops.divide(a, b);
 				break;
+				
 			case 5: // natural log
 				System.out.println("Insert number");
 				retry = 0;
@@ -74,13 +79,11 @@ public class Main {
 				if(retry == 3) {
 					break;
 				}
-				System.out.println(ops.naturalLogarithm(a));
-				
+				result = ops.naturalLogarithm(a);
 				break;
+				
 			case 6: // square
 				System.out.println("Insert number");
-				a = in.nextDouble();
-				
 				retry = 0;
 				while((a = in.nextDouble()) < 0 && retry < 3) {
 					System.out.println("You cannot make sqrt of negative number number, re-enter");
@@ -89,19 +92,17 @@ public class Main {
 				if(retry == 3) {
 					break;
 				}
-				
-				System.out.println(ops.square(a));
-				
+				result = ops.square(a);
 				break;
 	
 			default:
+				System.out.println("Not a valid choiche.");
 				break;
 			}
 		
-		
+		if(result != null) {
+			System.out.println("Result: " + result);
+		} 
+		System.out.println("END");
 	}
-	
-	
-
-
 }
