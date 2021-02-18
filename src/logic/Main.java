@@ -7,10 +7,12 @@ import java.util.Scanner;
  */
 public class Main {
 
-	private static Scanner in;
-
+	private static String insertFirst = "Insert first number";
+	private static String insertSecond = "Insert second number";
+	
+	
 	public static void main(String[] args) {	
-		in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		Operations ops = new Operations();
 		int retry;
 		
@@ -31,33 +33,33 @@ public class Main {
 		
 		switch (choiche) {
 			case 1: // sum
-				System.out.println("Insert first number");
+				System.out.println(insertFirst);
 				a = in.nextDouble();
-				System.out.println("Insert second number");
+				System.out.println(insertSecond);
 				b = in.nextDouble();
 				result = ops.sum(a, b);
 				break;
 				
 			case 2: // sub
-				System.out.println("Insert first number");
+				System.out.println(insertFirst);
 				a = in.nextDouble();
-				System.out.println("Insert second number");
+				System.out.println(insertSecond);
 				b = in.nextDouble();
 				result = ops.sub(a, b);
 				break;
 				
 			case 3: //multiplicate
-				System.out.println("Insert first number");
+				System.out.println(insertFirst);
 				a = in.nextDouble();
-				System.out.println("Insert second number");
+				System.out.println(insertSecond);
 				b = in.nextDouble();
 				result = ops.multiplicate(a, b);
 				break;
 				
 			case 4: //division
-				System.out.println("Insert first number");
+				System.out.println(insertFirst);
 				a = in.nextDouble();
-				System.out.println("Insert second number");
+				System.out.println(insertSecond);
 				retry = 0;
 				while((b = in.nextDouble()) == 0 && retry < 3) {
 					System.out.println("You cannot make by zero division, re-enter");
